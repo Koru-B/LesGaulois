@@ -26,22 +26,14 @@ public class Gaulois {
 		String nomRomain = romain.getNom();
 		System.out.println(nom + " envoie un grand coup dans la mâchoir de " 
 				+ nomRomain);
-		int forceCoup = force/3;
+		int forceCoup = (force*effetPotion)/3;
 		romain.recevoirCoup(forceCoup);
+		if (effetPotion > 1) {
+			effetPotion--;
+		}
 	}
 	
-	private void boirePotion(int forcePotion) {
-		// TODO Auto-generated method stub
-	}
-	
-	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix", 8);
-
-		System.out.println(asterix);
-	}
-
-	@Override
-	public String toString() {
-		return nom;
+	public void boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
 	}
 }

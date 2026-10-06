@@ -4,18 +4,22 @@ public class Chaudron {
 	private int quantitePotion;
 	private int forcePotion;
 	
-	private void remplirChaudron(int quantite, int forcePotion) {
-		// TODO Auto-generated method stub
+	public Chaudron(int quantitePotion, int forcePotion) {
+		super();
+		this.quantitePotion = quantitePotion;
+		this.forcePotion = forcePotion;
+	}
 
+	public void remplirChaudron(int quantite, int forcePotion) {
+		quantitePotion = quantite;
+		this.forcePotion = forcePotion;
 	}
 	
-	private void resterPotion() {
-		// TODO Auto-generated method stub
-
+	public boolean resterPotion() {
+		return quantitePotion != 0;
 	}
 	
-	private void prendreLouche() {
-		// TODO Auto-generated method stub
-
+	public int prendreLouche() {
+		return forcePotion;
 	}
 }

@@ -9,7 +9,7 @@ public class TestGaulois {
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Gaulois obelix = new Gaulois("Obélix", 16);
-		Romain minus = new Romain("Minus", 6);
+		Romain minus = new Romain("Minus", -6);
 		Romain brutus = new Romain("Brutus", 14);
 		Druide panoramix = new Druide("Panoramix", 2);
 		Chaudron chaudron = new Chaudron(20, 1);

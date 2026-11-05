@@ -2,6 +2,7 @@ package histoire;
 
 import personnages.Gaulois;
 import personnages.Romain;
+import village_gaulois.Musee;
 import personnages.Druide;
 import objets.Chaudron;
 import objets.Equipement;
@@ -26,12 +27,16 @@ public class Scenario {
 		minus.sEquiper(Equipement.BOUCLIER);
 		minus.sEquiper(Equipement.CASQUE);
 		milexcus.sEquiper(Equipement.CASQUE);
-		minus.parler("UN GAU... UN GAUGAU...");
-		do {
-			asterix.frapper(minus);
-		} while (minus.getForce() > 0);
+		minus.parler("UN GAU... UN GAUGAU...");		
+		asterix.frapper(minus);
+		asterix.frapper(minus);
+		minus.parler("Alors Asterix on fait moins le malin face à mon équipement, Hi ! Hi !");
+		obelix.parler("Asterix, tu veux un peu d'aide ?");
+		obelix.frapper(minus);
 		
-		
+		Musee musee = new Musee();
+		obelix.faireUneDonnation(musee);
+		System.out.println(musee.extraireInstructionsOCaml());
 //		PARTIE 5 : a decommenter
 //		milexcus.parler("UN GAU... UN GAUGAU...");
 //		do {
@@ -39,8 +44,8 @@ public class Scenario {
 //		} while (milexcus.getForce() > 0);
 
 
-//		Musee musee = new Musee();
-//		obelix.faireUneDonnation(musee);
+		
+	
 
 	}
 

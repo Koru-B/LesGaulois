@@ -1,6 +1,7 @@
 package personnages;
 
 import objets.Equipement;
+import village_gaulois.Musee;
 import village_gaulois.Village;
 
 public class Gaulois {
@@ -40,10 +41,10 @@ public class Gaulois {
 	}
 	
 
-	@Override
-	public String toString() {
-		return nom;
-	}
+//	@Override
+//	public String toString() {
+//		return nom;
+//	}
 
 //	public void frapper(Romain romain) {
 //		String nomRomain = romain.getNom();
@@ -60,7 +61,7 @@ public class Gaulois {
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
 				+ romain.getNom());
-		Equipement[] trophee = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] trophee = romain.recevoirCoup((force / 2) * effetPotion);
 		effetPotion--;
 		if (effetPotion < 1) {
 			effetPotion = 1;
@@ -86,5 +87,20 @@ public class Gaulois {
 			parler("Bonjour, je m'appelle " + nom
 					+ ". J'habite le village : " + village.getNom() + ".");
 		}
+	}
+	
+	public void faireUneDonnation(Musee musee) {
+	    if (nbTrophees > 0) {
+	        String annonce = "Je donne au musee tous mes trophees :";
+
+	        for (int i = 0; i < nbTrophees; i++) {
+	            annonce += "\n- " + trophees[i];
+	            musee.donnerTrophees(this, trophees[i]);
+	            trophees[i] = null;
+	        }
+
+	        parler(annonce);
+	        nbTrophees = 0;
+	    }
 	}
 }
